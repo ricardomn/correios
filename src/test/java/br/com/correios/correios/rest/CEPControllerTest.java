@@ -35,7 +35,6 @@ class CEPControllerTests {
         String cep = "60510118";
         String jsonValido = getExemploCEPValidoJSON();
 
-        // Simulação de chamada real à API (mock do serviço externo)
         when(cepController.consultaCEP(cep)).thenReturn(ResponseEntity.ok().body(jsonValido));
 
         mockMvc.perform(MockMvcRequestBuilders.get("/consulta-cep")
